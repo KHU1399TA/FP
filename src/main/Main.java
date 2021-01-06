@@ -1,8 +1,15 @@
 package main;
 
+import java.util.Scanner;
+
 public class Main {
+	private static Scanner input;
+	private static Manager manager;
+	
 	public static void main(String[] args) {
-		Manager manager = new Manager("BijanProgrammer", "1234",
+		input = new Scanner(System.in);
+		
+		manager = new Manager("BijanProgrammer", "1234",
 				"Bijan", "Eisapour", 19, 100);
 		
 		login();
@@ -11,6 +18,17 @@ public class Main {
 	}
 	
 	private static void login() {
-		// TODO: complete this please @Reza
+		String username;
+		String password;
+		
+		do {
+			System.out.print("Username: ");
+			username = input.nextLine();
+			
+			System.out.print("Password: ");
+			password = input.nextLine();
+			
+			System.out.println("-".repeat(30));
+		} while (!manager.isValidPassword(password));
 	}
 }

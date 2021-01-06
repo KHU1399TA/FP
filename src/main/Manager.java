@@ -17,6 +17,10 @@ public class Manager {
 		this.salary = salary;
 	}
 	
+	public boolean isValidPassword(String password) {
+		return this.password.equals(password);
+	}
+	
 	@Override
 	public String toString() {
 		return "Manager{" +
